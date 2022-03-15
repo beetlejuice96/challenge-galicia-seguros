@@ -6,7 +6,6 @@ import {
   Toolbar,
   Typography,
   Button,
-  Popover,
 } from "@mui/material";
 import CONSTANTS from "../../constants";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -15,6 +14,8 @@ import PersonIcon from "@mui/icons-material/Person";
 import { Link } from "react-router-dom";
 import { useNavBarStyles } from "./style";
 import LoginPopover from "../login";
+import { useAuth } from "../../providers/authProvider/AuthContext";
+import MenuUser from "../menuUser";
 
 const { ROUTES } = CONSTANTS;
 
@@ -22,7 +23,7 @@ const NavBar = () => {
   const classes = useNavBarStyles();
   const [opened, setOpened] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
-
+  const { user } = useAuth();
   const toggleDrawer = () => {
     setOpened(!opened);
   };
@@ -70,21 +71,28 @@ const NavBar = () => {
                 </Typography>
               </div>
             </Link>
-            <Button
-              variant="outlined"
-              className={classes.loginButton}
-              endIcon={<PersonIcon />}
-              aria-describedby={id}
-              onClick={handleClick}
-            >
-              INICIAR SESIÓN
-            </Button>
-            <LoginPopover
-              open={open}
-              handleClose={handleClose}
-              id={id}
-              anchorEl={anchorEl}
-            />
+            {user.name !== "" && user.password !== "" ? (
+              <MenuUser />
+            ) : (
+              <Fragment>
+                <Button
+                  variant="outlined"
+                  className={classes.loginButton}
+                  endIcon={<PersonIcon />}
+                  aria-describedby={id}
+                  onClick={handleClick}
+                >
+                  INICIAR SESIÓN
+                </Button>
+                <LoginPopover
+                  setAnchorEl={setAnchorEl}
+                  open={open}
+                  handleClose={handleClose}
+                  id={id}
+                  anchorEl={anchorEl}
+                />
+              </Fragment>
+            )}
           </Toolbar>
         </AppBar>
       </div>

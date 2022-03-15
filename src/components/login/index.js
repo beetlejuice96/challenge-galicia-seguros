@@ -3,7 +3,7 @@ import { Popover, InputLabel, Button, TextField } from "@mui/material";
 import { useLoginStyles } from "./styles";
 import { useAuth } from "../../providers/authProvider/AuthContext";
 
-const LoginPopover = ({ id, open, anchorEl, handleClose }) => {
+const LoginPopover = ({ id, open, anchorEl, handleClose, setAnchorEl }) => {
   const classes = useLoginStyles();
   const [user, setUser] = useState({ name: "", password: "" });
   const { login } = useAuth();
@@ -19,6 +19,7 @@ const LoginPopover = ({ id, open, anchorEl, handleClose }) => {
   };
 
   const handleClick = () => {
+    setAnchorEl(null);
     login(user);
   };
 
