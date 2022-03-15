@@ -1,7 +1,31 @@
-import React from "react";
-import { Popover } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { Popover, InputLabel, Button, TextField } from "@mui/material";
+import { useLoginStyles } from "./styles";
+import { useAuth } from "../../providers/authProvider/AuthContext";
 
 const LoginPopover = ({ id, open, anchorEl, handleClose }) => {
+  const classes = useLoginStyles();
+  const [user, setUser] = useState({ name: "", password: "" });
+  const { login } = useAuth();
+
+  const handleChangeUserName = (params) => {
+    console.log(params.target.value);
+    setUser({ ...user, name: params.target.value });
+  };
+
+  const handleChangePassword = (params) => {
+    console.log(params.target.value);
+    setUser({ ...user, password: params.target.value });
+  };
+
+  const handleClick = () => {
+    login(user);
+  };
+
+  const isDisabled = () => {
+    return user.name === "" && user.password === "";
+  };
+
   return (
     <Popover
       id={id}
@@ -17,7 +41,35 @@ const LoginPopover = ({ id, open, anchorEl, handleClose }) => {
         horizontal: "right",
       }}
     >
-      The content of the Popover.
+      <div className={classes.container}>
+        <div className={classes.formControl}>
+          <InputLabel>Usuario</InputLabel>
+          <TextField
+            name="textmask"
+            id="user"
+            size="small"
+            onChange={handleChangeUserName}
+          />
+        </div>
+        <div className={classes.formControl}>
+          <InputLabel htmlFor="password">Contraseña</InputLabel>
+          <TextField
+            name="textmask"
+            id="password"
+            size="small"
+            type={"password"}
+            onChange={handleChangePassword}
+          />
+        </div>
+        <Button
+          variant="contained"
+          className={classes.loginButton}
+          onClick={handleClick}
+          disabled={user.name === "" || user.password === ""}
+        >
+          INICIAR SESIÓN
+        </Button>
+      </div>
     </Popover>
   );
 };
