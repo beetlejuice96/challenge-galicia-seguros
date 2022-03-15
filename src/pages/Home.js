@@ -1,7 +1,11 @@
-import { Fragment } from "react";
+import Main from "../components/main";
 
 const Home = () => {
-  return <div>home</div>;
+  return (
+      <div>
+        <Main/>
+      </div>
+  );
 };
 
 export default Home;

@@ -2,14 +2,30 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import { BrowserRouter } from "react-router-dom";
+import { createTheme, ThemeProvider } from "@mui/material";
 import reportWebVitals from "./reportWebVitals";
+import {BrowserRouter} from "react-router-dom";
+
+
+const theme = createTheme({
+    breakpoints: {
+        values: {
+            xs: 0,
+            sm: 600,
+            md: 900,
+            lg: 1200,
+            xl: 1400,
+        },
+    },
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+      <ThemeProvider theme={theme}>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+      </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
