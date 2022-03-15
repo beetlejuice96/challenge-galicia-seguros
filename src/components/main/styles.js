@@ -9,7 +9,7 @@ export const useMainStyles = makeStyles((theme) =>
                 height: "85vh",
                 display: "flex",
                 alignItems: "center",
-                margin: "0 80px 0 50px",
+                margin: "0 50px 0 50px",
                 justifyContent: "space-between",
                 flexDirection: "row",
             },
