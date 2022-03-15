@@ -41,7 +41,12 @@ const MenuUser = () => {
           horizontal: "right",
         }}
       >
-        <MenuItem onClick={handleClose} onClick={() => logout()}>
+        <MenuItem
+          onClick={() => {
+            logout();
+            handleClose();
+          }}
+        >
           Logout
         </MenuItem>
       </Menu>
