@@ -2,7 +2,7 @@ import React from "react";
 import { Routes as Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
-import { NoMatch } from "./pages/No-match";
+import NoMatch from "./pages/No-match";
 
 const Routes = () => {
   return (
