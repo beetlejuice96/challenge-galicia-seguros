@@ -9,7 +9,7 @@ export const useMainStyles = makeStyles((theme) =>
         height: "86.5vh",
         display: "flex",
         alignItems: "center",
-        margin: "0 50px 0 50px",
+        margin: "0 100px 0 100px",
         justifyContent: "center",
       },
     },
@@ -18,29 +18,25 @@ export const useMainStyles = makeStyles((theme) =>
       color: "#28272e",
       fontWeight: "600 !important",
     },
-    subTitle: {
-      fontSize: "1.5rem !important",
-      color: "#4e5a6f",
-      fontWeight: "600 !important",
-    },
-    divider: {
-      border: "1px solid #fe675a  !important",
-      width: "100% !important",
-      margin: "0 0 0 0 !important",
-    },
+    subTitleCard: theme.subTitleCard,
+    firstDivider: theme.firstDivider,
     containerBoxes: {
       display: "flex",
       flexDirection: "row",
       width: "100% ",
       justifyContent: "space-between",
     },
-    box: {
-      //   display: "flex",
-      //   flexDirection: "column",
-      //   alignItems: "center",
-      //   justifyContent: "center",
-      width: "49%",
-      margin: "40px 0 0 0 !important",
+    box: theme.box,
+    containerInputsCard: theme.containerInputsCard,
+    searchButton: {
+      width: "100% !important",
+      backgroundColor: "#fe675a !important",
+
+      margin: "10px 0 30px 0 !important",
+    },
+    firstFormControl: theme.firstFormControl,
+    input: {
+      width: "inherit",
     },
   })
 );

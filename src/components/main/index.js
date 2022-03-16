@@ -1,26 +1,29 @@
-import { Typography, Divider, Card } from "@mui/material";
-import React, { Fragment } from "react";
+import {
+  Typography,
+  Divider,
+  Card,
+  InputLabel,
+  TextField,
+  Button,
+} from "@mui/material";
+import React, { useState } from "react";
 import { useMainStyles } from "./styles";
-
+import weatherBitService from "../../services/weatherBitService";
+import SearchCard from "./searchCard";
 const Main = () => {
   const classes = useMainStyles();
-
+  const [response, setResponse] = useState(null);
   return (
     <section className={classes.container}>
       <Typography className={classes.title}>SERVICIO DEL CLIMA</Typography>
-      <Divider variant="middle" className={classes.divider} />
+      <Divider variant="middle" className={classes.firstDivider} />
       <div className={classes.containerBoxes}>
-        <Card className={classes.box}>
-          <Typography className={classes.subTitle}>
-            Selecciona la zona
-          </Typography>
-          <Divider variant="middle" className={classes.divider} />
-        </Card>
+        <SearchCard setResponse={setResponse} />
         <Card className={classes.box}>
           <Typography className={classes.subTitle}>
             Reporte del clima
           </Typography>
-          <Divider variant="middle" className={classes.divider} />
+          <Divider variant="middle" className={classes.firstDivider} />
         </Card>
       </div>
     </section>

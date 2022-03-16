@@ -4,28 +4,53 @@ import "./index.css";
 import App from "./App";
 import { createTheme, ThemeProvider } from "@mui/material";
 import reportWebVitals from "./reportWebVitals";
-import {BrowserRouter} from "react-router-dom";
-
+import { BrowserRouter } from "react-router-dom";
 
 const theme = createTheme({
-    breakpoints: {
-        values: {
-            xs: 0,
-            sm: 600,
-            md: 900,
-            lg: 1200,
-            xl: 1400,
-        },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1400,
     },
+  },
+  box: {
+    width: "49%",
+    margin: "40px 0 0 0 !important",
+  },
+  containerInputsCard: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "0 40px 0 40px ",
+  },
+  firstDivider: {
+    border: "1px solid #fe675a  !important",
+    width: "100% !important",
+    margin: "0 0 20px 0 !important",
+  },
+  firstFormControl: {
+    margin: "10px 0 10px 0",
+    textAlign: "left",
+    width: "100% !important",
+  },
+  subTitleCard: {
+    fontSize: "1.5rem !important",
+    color: "#4e5a6f",
+    fontWeight: "600 !important",
+  },
 });
 
 ReactDOM.render(
   <React.StrictMode>
-      <ThemeProvider theme={theme}>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-      </ThemeProvider>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
