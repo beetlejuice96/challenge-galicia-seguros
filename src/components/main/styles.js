@@ -5,6 +5,7 @@ export const useMainStyles = makeStyles((theme) =>
   createStyles({
     container: {
       flexDirection: "column",
+      marginTop: "20px !important",
       [theme.breakpoints.up("md")]: {
         height: "86.5vh",
         display: "flex",
