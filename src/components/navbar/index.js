@@ -51,6 +51,13 @@ const NavBar = () => {
             <Typography className={classes.navButton}>Home</Typography>
           </Link>
         </div>
+        <Button
+          variant="outlined"
+          className={classes.loginButtonDrawer}
+          onClick={handleClick}
+        >
+          INICIAR SESIÓN
+        </Button>
       </SwipeableDrawer>
       <div className={classes.bar}>
         <AppBar className={classes.appBar} color="transparent">

@@ -70,5 +70,10 @@ export const useNavBarStyles = makeStyles((theme) =>
         color: "white !important",
       },
     },
+    loginButtonDrawer: {
+      border: "1px solid white !important",
+      color: "white !important",
+      backgroundColor: "#fe675a !important",
+    },
   })
 );

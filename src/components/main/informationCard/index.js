@@ -60,7 +60,8 @@ const InformationCard = ({ weather }) => {
           </div>
           <div>
             <img
-              src={`./icons/${weather.weather?.icon}.png`}
+              // src={`./icons/${weather.weather?.icon}.png`}
+              src={`https://www.weatherbit.io/static/img/icons/${weather.weather?.icon}.png`}
               alt="icon"
               className={classes.img}
             />
