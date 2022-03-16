@@ -32,8 +32,8 @@ const SearchCard = ({ setResponse }) => {
       <Typography className={classes.subTitleCard}>
         Selecciona la zona
       </Typography>
+      <Divider variant="middle" className={classes.secondDivider} />
       <div className={classes.containerInputsCard}>
-        <Divider variant="middle" className={classes.firstDivider} />
         <div className={classes.firstFormControl}>
           <InputLabel>Ciudad</InputLabel>
           <TextField

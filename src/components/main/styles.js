@@ -25,6 +25,10 @@ export const useMainStyles = makeStyles((theme) =>
       flexDirection: "row",
       width: "100% ",
       justifyContent: "space-between",
+      [theme.breakpoints.down("md")]: {
+        flexDirection: "column",
+        alignItems: "center",
+      },
     },
     box: theme.box,
     containerInputsCard: theme.containerInputsCard,

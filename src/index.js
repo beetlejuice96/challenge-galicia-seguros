@@ -18,6 +18,8 @@ const theme = createTheme({
   },
   box: {
     width: "49%",
+
+    height: "400px",
     margin: "40px 0 0 0 !important",
   },
   containerInputsCard: {
@@ -29,6 +31,11 @@ const theme = createTheme({
   },
   firstDivider: {
     border: "1px solid #fe675a  !important",
+    width: "100% !important",
+    margin: "0 0 20px 0 !important",
+  },
+  secondDivider: {
+    border: "1px solid #4e5a6f  !important",
     width: "100% !important",
     margin: "0 0 20px 0 !important",
   },

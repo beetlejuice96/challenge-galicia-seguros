@@ -1,10 +1,15 @@
 import { createStyles, makeStyles } from "@mui/styles";
 export const useSearchCardStyles = makeStyles((theme) =>
   createStyles({
-    box: theme.box,
+    box: {
+      ...theme.box,
+      [theme.breakpoints.down("md")]: {
+        width: "90%",
+      },
+    },
     containerInputsCard: theme.containerInputsCard,
     subTitleCard: theme.subTitleCard,
-    firstDivider: theme.firstDivider,
+    secondDivider: theme.secondDivider,
     firstFormControl: theme.firstFormControl,
     input: {
       width: "inherit",
