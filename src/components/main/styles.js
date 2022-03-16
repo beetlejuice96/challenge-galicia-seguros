@@ -14,7 +14,7 @@ export const useMainStyles = makeStyles((theme) =>
       flexDirection: "row",
       justifyContent: "space-between",
 
-      [theme.breakpoints.down("xl")]: {
+      [theme.breakpoints.down("lg")]: {
         flexDirection: "column",
         alignItems: "center",
       },
