@@ -38,7 +38,7 @@ export const useNavBarStyles = makeStyles((theme) =>
     },
     appBar: {
       backgroundColor: "#fe675a !important",
-      height: "6vh",
+      position: "absolute !important",
     },
     menuButton: {
       color: "white !important",

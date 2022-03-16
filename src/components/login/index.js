@@ -9,12 +9,10 @@ const LoginPopover = ({ id, open, anchorEl, handleClose, setAnchorEl }) => {
   const { login } = useAuth();
 
   const handleChangeUserName = (params) => {
-    console.log(params.target.value);
     setUser({ ...user, name: params.target.value });
   };
 
   const handleChangePassword = (params) => {
-    console.log(params.target.value);
     setUser({ ...user, password: params.target.value });
   };
 
