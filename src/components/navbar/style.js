@@ -27,9 +27,10 @@ export const useNavBarStyles = makeStyles((theme) =>
       },
     },
     bar: {
-      height: "6vh",
+      height: "7vh",
       width: "100%",
       zIndex: "100",
+      position: "fixed",
     },
     toolbar: {
       padding: "0 50px 0 50px !important",

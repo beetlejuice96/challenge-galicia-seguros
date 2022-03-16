@@ -6,7 +6,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 
 function App() {
   return (
-    <div className="App" style={{ backgroundColor: "#f2f3ee" }}>
+    <div className="App">
       <CssBaseline />
       <AuthProvider>
         <Routes />

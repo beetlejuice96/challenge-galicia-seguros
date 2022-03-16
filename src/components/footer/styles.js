@@ -5,6 +5,9 @@ export const useFooterStyles = makeStyles((theme) =>
     container: {
       flexDirection: "row",
       backgroundColor: "#131313",
+      position: "fixed",
+      bottom: "0",
+      width: "100%",
       [theme.breakpoints.up("md")]: {
         display: "flex",
         alignItems: "center",
