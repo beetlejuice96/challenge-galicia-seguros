@@ -3,8 +3,12 @@ export const useInformationCardStyles = makeStyles((theme) =>
   createStyles({
     box: {
       ...theme.box,
+      [theme.breakpoints.down("xl")]: {
+        maxWidth: "800px",
+      },
       [theme.breakpoints.down("md")]: {
-        width: "90%",
+        width: "100%",
+        minWidth: "100%",
       },
     },
     containerInfo: {
@@ -25,11 +29,11 @@ export const useInformationCardStyles = makeStyles((theme) =>
       fontWeight: "500 !important",
     },
     textDay: {
-      fontSize: "2rem !important",
+      fontSize: "2em !important",
       lineHeight: "2rem !important",
     },
     textState: {
-      fontSize: "1.5rem !important",
+      fontSize: "1.5em !important",
     },
     textTemp: {
       fontSize: "6rem !important",
@@ -55,6 +59,10 @@ export const useInformationCardStyles = makeStyles((theme) =>
     containerAllInfo: {
       display: "flex",
       justifyContent: "space-between",
+      [theme.breakpoints.down("sm")]: {
+        justifyContent: "center",
+        flexDirection: "column",
+      },
       padding: "0 40px 0 40px ",
     },
     img: {

@@ -3,8 +3,12 @@ export const useSearchCardStyles = makeStyles((theme) =>
   createStyles({
     box: {
       ...theme.box,
+      [theme.breakpoints.down("xl")]: {
+        maxWidth: "800px",
+      },
       [theme.breakpoints.down("md")]: {
-        width: "90%",
+        width: "100%",
+        minWidth: "100%",
       },
     },
     containerInputsCard: theme.containerInputsCard,

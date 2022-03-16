@@ -1,11 +1,7 @@
 import Main from "../components/main";
 
 const Home = () => {
-  return (
-      <div>
-        <Main/>
-      </div>
-  );
+  return <Main />;
 };
 
 export default Home;

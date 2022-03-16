@@ -3,30 +3,18 @@ import { createStyles, makeStyles } from "@mui/styles";
 
 export const useMainStyles = makeStyles((theme) =>
   createStyles({
-    container: {
-      flexDirection: "column",
-      marginTop: "20px !important",
-      [theme.breakpoints.up("md")]: {
-        height: "86.5vh",
-        display: "flex",
-        alignItems: "center",
-        margin: "0 100px 0 100px",
-        justifyContent: "center",
-      },
-    },
     title: {
       fontSize: "2.5rem !important",
       color: "#28272e",
       fontWeight: "600 !important",
     },
-    subTitleCard: theme.subTitleCard,
     firstDivider: theme.firstDivider,
     containerBoxes: {
-      display: "flex",
+      display: "flex !important",
       flexDirection: "row",
-      width: "100% ",
       justifyContent: "space-between",
-      [theme.breakpoints.down("md")]: {
+
+      [theme.breakpoints.down("xl")]: {
         flexDirection: "column",
         alignItems: "center",
       },

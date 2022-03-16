@@ -1,4 +1,4 @@
-import { Typography, Divider } from "@mui/material";
+import { Typography, Divider, Container, Box } from "@mui/material";
 import React, { useState } from "react";
 import { useMainStyles } from "./styles";
 import SearchCard from "./searchCard";
@@ -8,15 +8,15 @@ const Main = () => {
   const [response, setResponse] = useState(null);
 
   return (
-    <section className={classes.container}>
+    <section>
       <Typography className={classes.title}>SERVICIO DEL CLIMA</Typography>
       <Divider variant="middle" className={classes.firstDivider} />
-      <div className={classes.containerBoxes}>
+      <Box className={classes.containerBoxes}>
         <SearchCard setResponse={setResponse} />
         <InformationCard
           weather={response !== null && response.payload.data[0]}
         />
-      </div>
+      </Box>
     </section>
   );
 };

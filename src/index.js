@@ -17,9 +17,9 @@ const theme = createTheme({
     },
   },
   box: {
-    width: "49%",
-
-    height: "400px",
+    // width: "49%",
+    minWidth: "650px",
+    height: "500px",
     margin: "40px 0 0 0 !important",
   },
   containerInputsCard: {

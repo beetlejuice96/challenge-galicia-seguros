@@ -33,12 +33,10 @@ export const useNavBarStyles = makeStyles((theme) =>
     },
     toolbar: {
       padding: "0 50px 0 50px !important",
-      height: "100%",
       justifyContent: "space-between",
     },
     appBar: {
       backgroundColor: "#fe675a !important",
-      position: "absolute !important",
     },
     menuButton: {
       color: "white !important",
