@@ -73,6 +73,10 @@ export const useInformationCardStyles = makeStyles((theme) =>
       display: "flex",
       flexDirection: "column",
       alignItems: "end",
+      [theme.breakpoints.down("sm")]: {
+        justifyContent: "center",
+        alignItems: "center",
+      },
     },
   })
 );
