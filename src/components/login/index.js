@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Popover, InputLabel, Button, TextField } from "@mui/material";
 import { useLoginStyles } from "./styles";
 import { useAuth } from "../../providers/authProvider/AuthContext";
-
 const LoginPopover = ({ id, open, anchorEl, handleClose, setAnchorEl }) => {
   const classes = useLoginStyles();
   const [user, setUser] = useState({ name: "", password: "" });
@@ -19,10 +18,6 @@ const LoginPopover = ({ id, open, anchorEl, handleClose, setAnchorEl }) => {
   const handleClick = () => {
     setAnchorEl(null);
     login(user);
-  };
-
-  const isDisabled = () => {
-    return user.name === "" && user.password === "";
   };
 
   return (

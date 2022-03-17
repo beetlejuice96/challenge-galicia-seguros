@@ -9,8 +9,10 @@ export const useNavBarStyles = makeStyles((theme) =>
     },
     drawerLink: {
       alignItems: "center",
-      display: "flex",
+      display: "flex !important",
       flexDirection: "column",
+      justifyContent: "center",
+      margin: "10px 10px 10px 10px ",
     },
     notUnderLine: {
       textDecoration: "none !important",
@@ -18,6 +20,7 @@ export const useNavBarStyles = makeStyles((theme) =>
     navButton: {
       margin: "10px 5px !important",
       textDecoration: " none !important",
+      textAlign: "center",
       [theme.breakpoints.up("sm")]: {
         margin: "0 10px !important",
         fontSize: "1.4rem!important",

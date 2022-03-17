@@ -47,7 +47,7 @@ const MenuUser = () => {
             handleClose();
           }}
         >
-          Logout
+          CERRAR SESIÓN
         </MenuItem>
       </Menu>
     </Fragment>

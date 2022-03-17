@@ -6,12 +6,13 @@ import {
   Toolbar,
   Typography,
   Button,
+  Container,
 } from "@mui/material";
 import CONSTANTS from "../../constants";
 import MenuIcon from "@mui/icons-material/Menu";
 import PersonIcon from "@mui/icons-material/Person";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useNavBarStyles } from "./style";
 import LoginPopover from "../login";
 import { useAuth } from "../../providers/authProvider/AuthContext";
@@ -23,7 +24,9 @@ const NavBar = () => {
   const classes = useNavBarStyles();
   const [opened, setOpened] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
-  const { user } = useAuth();
+  const navigate = useNavigate();
+
+  const { user, logout } = useAuth();
   const toggleDrawer = () => {
     setOpened(!opened);
   };
@@ -35,6 +38,13 @@ const NavBar = () => {
     setAnchorEl(null);
   };
 
+  const handleClickLoginMobile = () => {
+    navigate(ROUTES.LOGINMOBILE);
+  };
+
+  const isAuth = () => {
+    return user.name !== "" && user.password !== "";
+  };
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
   return (
@@ -46,18 +56,32 @@ const NavBar = () => {
         onOpen={toggleDrawer}
         className={classes.drawer}
       >
-        <div className={classes.drawerLink}>
+        <Container className={classes.drawerLink}>
+          {user.name !== "" && user.password !== "" ? (
+            <Typography className={classes.navButton}>
+              {user.name.toUpperCase()}
+            </Typography>
+          ) : (
+            <Button
+              variant="outlined"
+              className={classes.loginButtonDrawer}
+              onClick={handleClickLoginMobile}
+            >
+              INICIAR SESIÓN
+            </Button>
+          )}
+
           <Link to={ROUTES.MAIN} className={classes.notUnderLine}>
-            <Typography className={classes.navButton}>Home</Typography>
+            <Button variant="text" className={classes.navButton}>
+              Home
+            </Button>
           </Link>
-        </div>
-        <Button
-          variant="outlined"
-          className={classes.loginButtonDrawer}
-          onClick={handleClick}
-        >
-          INICIAR SESIÓN
-        </Button>
+          {isAuth && (
+            <Button variant="text" onClick={logout}>
+              CERRAR SESIÓN
+            </Button>
+          )}
+        </Container>
       </SwipeableDrawer>
       <div className={classes.bar}>
         <AppBar className={classes.appBar} color="transparent">
