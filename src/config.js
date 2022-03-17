@@ -7,8 +7,8 @@ const CONFIG = {
    */
   SERVICES: {
     WEATHERBIT: {
-      URL: "https://api.weatherbit.io/v2.0",
-      API_KEY: "11690a6178ab48cb858bec3c95026967",
+      URL: process.env.REACT_APP_URL_WEATHER_API,
+      API_KEY: process.env.REACT_APP_API_KEY,
     },
   },
 };
