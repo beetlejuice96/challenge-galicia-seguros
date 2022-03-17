@@ -10,10 +10,11 @@ import {
 } from "@mui/material";
 import weatherBitService from "../../../services/weatherBitService";
 import { useSearchCardStyles } from "./styles";
-
+import { useError } from "../../../providers/errorProvider/ErrorContext";
 const SearchCard = ({ setResponse }) => {
   const classes = useSearchCardStyles();
   const [request, setRequest] = useState({ city: "", country: "" });
+  const { openToastError } = useError();
 
   const handleChangeCity = (params) => {
     setRequest({ ...request, city: params.target.value });
@@ -25,7 +26,12 @@ const SearchCard = ({ setResponse }) => {
 
   const handleClick = async () => {
     let response = await weatherBitService.getCurrentWeather(request);
-    setResponse(response);
+    if (response.success) {
+      setResponse(response);
+    } else {
+      openToastError("ups! hubo un error al realizar la consulta!");
+      setResponse(null);
+    }
   };
   return (
     <Card className={classes.box}>

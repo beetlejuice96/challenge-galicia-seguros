@@ -35,6 +35,7 @@ const handleError = (axiosErr) => {
       error: { message: "ERR_CONNECTION_REFUSED" },
     };
   }
+  return errorResponse;
 };
 
 const handleResponse = (axiosRes) => {

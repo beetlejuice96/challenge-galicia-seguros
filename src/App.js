@@ -3,14 +3,16 @@ import "./App.css";
 import Routes from "./router";
 import AuthProvider from "./providers/authProvider/authProvider";
 import CssBaseline from "@mui/material/CssBaseline";
-
+import ErrorProvider from "./providers/errorProvider/ErrorProvider";
 function App() {
   return (
     <div className="App">
       <CssBaseline />
-      <AuthProvider>
-        <Routes />
-      </AuthProvider>
+      <ErrorProvider>
+        <AuthProvider>
+          <Routes />
+        </AuthProvider>
+      </ErrorProvider>
     </div>
   );
 }
