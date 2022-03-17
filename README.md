@@ -22,7 +22,8 @@
 ## Comenzando 
 
 ### Pre-requisitos 
-_Para ejecutar este proyecto es necesario contar con :[Docker](https://docs.docker.com/engine/install/)_
+_Para ejecutar este proyecto es necesario contar con [Docker](https://docs.docker.com/engine/install/) y [Docker compose](https://docs.docker.com/compose/install/)_
+
 
 
 
@@ -31,18 +32,20 @@ _Para ejecutar este proyecto es necesario contar con :[Docker](https://docs.dock
 1. Clonar el repositorio
    ```sh
    git clone git@github.com:beetlejuice96/challenge-galicia-seguros.git
-   
+
+   cd ./challenge-galicia-seguros
+
    git checkout withMUI
    ```
-2. Agregar archivo de configuracion **.env** para las variables de entorno
+2. Crear archivo de configuracion **.env** para las variables de entorno 
    1. debera completar dos variables las cuales son
         ```
         REACT_APP_URL_WEATHER_API=
         REACT_APP_API_KEY=
         ```
-    2.  El valor para REACT_APP_URL_WEATHER_API  es **https://api.weatherbit.io/v2.0**
+    1.  El valor para REACT_APP_URL_WEATHER_API  es **https://api.weatherbit.io/v2.0**
    
-    3. El valor para  REACT_APP_API_KEY se obtiene registrandose en la pagina de [weatherbit API](https://www.weatherbit.io/account/create)
+    2. El valor para  REACT_APP_API_KEY se obtiene registrandose en la pagina de [weatherbit API](https://www.weatherbit.io/account/create)
    
    
 3. Ejecutar
@@ -65,6 +68,7 @@ _Para ejecutar este proyecto es necesario contar con :[Docker](https://docs.dock
 * [Axios](https://axios-http.com/docs/intro)
 * [Material UI](https://mui.com/)
 * [Docker](https://www.docker.com/)
+* [Docker compose](https://docs.docker.com/compose/install/)
 
 ## Contacto
 
