@@ -57,7 +57,7 @@ const NavBar = () => {
         className={classes.drawer}
       >
         <Container className={classes.drawerLink}>
-          {user.name !== "" && user.password !== "" ? (
+          {isAuth() ? (
             <Typography className={classes.navButton}>
               {user.name.toUpperCase()}
             </Typography>
@@ -76,7 +76,7 @@ const NavBar = () => {
               Home
             </Button>
           </Link>
-          {isAuth && (
+          {isAuth() && (
             <Button variant="text" onClick={logout}>
               CERRAR SESIÓN
             </Button>
