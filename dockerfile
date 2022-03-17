@@ -1,9 +1,10 @@
 FROM node:16-alpine3.12 AS builder
 WORKDIR /app
-ENV PATH /app/node_modules/.bin:$PATH
+# ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json ./
 COPY yarn.lock ./
 COPY . ./
+RUN yarn install
 # RUN npm install --global yarn
 RUN yarn build
 
