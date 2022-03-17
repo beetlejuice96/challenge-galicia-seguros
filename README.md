@@ -30,7 +30,7 @@ _Para ejecutar este proyecto es necesario contar con :[Docker](https://docs.dock
 
 1. Clonar el repositorio
    ```sh
-   git clone https://github.com/sosajseba/weather-api.git
+   git clone git@github.com:beetlejuice96/challenge-galicia-seguros.git
    ```
 2. Ejecutar
    ```sh
