@@ -97,7 +97,8 @@ const InformationCard = ({ weather }) => {
             />
             <div className={classes.containerSecondaryInfo}>
               <Typography>
-                Prob de precipitaciones: {weather.precip}%{" "}
+                Prob de precipitaciones:{" "}
+                {weather.precip ? `${weather.precip}%` : "-"}
               </Typography>
               <Typography>Humedad: {weather.rh}% </Typography>
               <Typography>
