@@ -34,14 +34,25 @@ _Para ejecutar este proyecto es necesario contar con :[Docker](https://docs.dock
    
    git checkout withMUI
    ```
-2. Ejecutar
+2. Agregar archivo de configuracion **.env** para las variables de entorno
+   1. debera completar dos variables las cuales son
+        ```
+        REACT_APP_URL_WEATHER_API=
+        REACT_APP_API_KEY=
+        ```
+    2.  El valor para REACT_APP_URL_WEATHER_API  es **https://api.weatherbit.io/v2.0**
+   
+    3. El valor para  REACT_APP_API_KEY se obtiene registrandose en la pagina de [weatherbit API](https://www.weatherbit.io/account/create)
+   
+   
+3. Ejecutar
    ```sh
    docker-compose up
    ```
    
-3. En su navegador acceder a `http://localhost:8080`
+4. En su navegador acceder a `http://localhost:8080`
    
-4. Para bajar el proyecto
+5. Para bajar el proyecto
    ```sh
    docker-compose down --remove-orphans
    ```
