@@ -29,11 +29,12 @@ export const useInformationCardStyles = makeStyles((theme) =>
       fontWeight: "500 !important",
     },
     textDay: {
-      fontSize: "2em !important",
-      lineHeight: "2rem !important",
+      fontSize: "4em !important;",
+      // lineHeight: "2rem !important",
     },
     textState: {
       fontSize: "1.5em !important",
+      lineHeight: "0 !important",
     },
     textTemp: {
       fontSize: "6rem !important",

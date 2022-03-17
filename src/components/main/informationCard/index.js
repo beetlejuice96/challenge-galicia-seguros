@@ -1,7 +1,25 @@
 import { Card, Divider, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
+import weatherBitService from "../../../services/weatherBitService";
+import csvHelper from "../../../utils/csvHelper";
 import { useInformationCardStyles } from "./styles";
 const InformationCard = ({ weather }) => {
   const classes = useInformationCardStyles();
+  const [countries, setCountries] = useState(null);
+  const [country, setcountry] = useState("");
+
+  useEffect(() => {
+    const getCountries = async () => {
+      let response = await weatherBitService.getCountries();
+      let arrayCountries = csvHelper.csvToArray(response.payload);
+      setCountries(arrayCountries);
+    };
+    getCountries();
+  }, []);
+
+  useEffect(() => {
+    getCountry();
+  }, [weather]);
 
   const getDay = () => {
     let numeroDia = new Date().getDay();
@@ -22,6 +40,16 @@ const InformationCard = ({ weather }) => {
     return fahrenheit;
   };
 
+  const getCountry = async () => {
+    if (weather) {
+      let response = await csvHelper.getCountry(
+        weather.country_code,
+        countries
+      );
+      setcountry(response.country_name);
+    }
+  };
+
   return (
     <Card className={classes.box}>
       <Typography className={classes.subTitleCard}>
@@ -35,9 +63,11 @@ const InformationCard = ({ weather }) => {
       ) : (
         <div className={classes.containerAllInfo}>
           <div className={classes.containerInfo}>
-            <Typography className={classes.textLocation}>
-              {weather.country_code}
-            </Typography>
+            {country !== "" && (
+              <Typography className={classes.textLocation}>
+                {country}
+              </Typography>
+            )}
             <Typography className={classes.textLocation}>
               {weather.city_name}
             </Typography>

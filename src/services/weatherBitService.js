@@ -1,7 +1,6 @@
 import axios from "axios";
 import axiosHelper from "../utils/axiosHelper";
 import CONFIG from "../config";
-
 import { APIClient } from "./commonService";
 class WeatherBitService {
   async getCurrentWeather({ city, country }) {
@@ -30,6 +29,18 @@ class WeatherBitService {
     let result;
     try {
       response = await axios.get(url);
+      result = axiosHelper.handleResponse(response);
+    } catch (error) {
+      result = axiosHelper.handleError(error);
+    }
+    return result;
+  }
+
+  async getCountries() {
+    const url = `./countries.csv`;
+    let result;
+    try {
+      let response = await axios.get(url);
       result = axiosHelper.handleResponse(response);
     } catch (error) {
       result = axiosHelper.handleError(error);

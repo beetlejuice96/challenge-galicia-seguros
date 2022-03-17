@@ -35,8 +35,7 @@ const theme = createTheme({
   },
   secondDivider: {
     border: "1px solid #4e5a6f  !important",
-    width: "100% !important",
-    margin: "0 0 20px 0 !important",
+    margin: "0 40px 20px 40px !important",
   },
   firstFormControl: {
     margin: "10px 0 10px 0",
