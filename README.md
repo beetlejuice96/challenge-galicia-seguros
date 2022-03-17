@@ -22,7 +22,7 @@
 ## Comenzando 
 
 ### Pre-requisitos 
-_Para ejecutar este proyecto es necesario contar con :[Docker](https://docs.docker.com/engine/install/)
+_Para ejecutar este proyecto es necesario contar con :[Docker](https://docs.docker.com/engine/install/)_
 
 
 
