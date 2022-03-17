@@ -1,4 +1,4 @@
-import { Button, IconButton, Snackbar } from "@mui/material";
+import { IconButton, Snackbar } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import React, { useState } from "react";
 import ErrorContext, { INITIAL_STATE } from "./ErrorContext";

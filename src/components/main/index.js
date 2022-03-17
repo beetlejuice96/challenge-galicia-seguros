@@ -1,4 +1,4 @@
-import { Typography, Divider, Container, Box } from "@mui/material";
+import { Typography, Divider, Box } from "@mui/material";
 import React, { useState } from "react";
 import { useMainStyles } from "./styles";
 import SearchCard from "./searchCard";

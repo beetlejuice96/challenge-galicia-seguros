@@ -1,6 +1,3 @@
-const envError = (varName) => {
-  throw new Error(`Environment variable ${varName} is not defined.`);
-};
 const CONFIG = {
   /**
    * Services the app uses.

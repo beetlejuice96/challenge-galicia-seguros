@@ -1,5 +1,3 @@
-import { AxiosResponse, AxiosError } from "axios";
-
 // export type axiosResponse<T = any> = {
 //     success: true;
 //     statusCode: number;
