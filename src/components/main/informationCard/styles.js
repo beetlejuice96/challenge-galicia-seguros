@@ -3,8 +3,8 @@ export const useInformationCardStyles = makeStyles((theme) =>
   createStyles({
     box: {
       ...theme.box,
-      [theme.breakpoints.down("xl")]: {
-        maxWidth: "800px",
+      [theme.breakpoints.only("lg")]: {
+        minWidth: "550px",
       },
       [theme.breakpoints.down("md")]: {
         width: "100%",

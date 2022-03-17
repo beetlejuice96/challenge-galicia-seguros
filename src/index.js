@@ -17,7 +17,6 @@ const theme = createTheme({
     },
   },
   box: {
-    // width: "49%",
     minWidth: "650px",
     minHeight: "500px",
     margin: "40px 0 0 0 !important",
